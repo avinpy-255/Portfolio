@@ -18,7 +18,7 @@ body {
     font-family: "Fira Sans Condensed", sans-serif;
     font-style: normal;
     font-size: 20px;
-    background-color: var(--base-200);
+    background-color: var(--base);
     
 }
 
@@ -31,19 +31,20 @@ a{
 }
 
 Header{
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     display: flex;
     justify-content: space-between;
     max-width: 1440px;
     margin: auto;
-    border-bottom: 1px solid rgba(--light-100);
+    border-bottom: 1px solid rgba(--base);
     .logo-holder{
         display: flex;
         padding:10px;
         align-items: center;
         font-weight: 600;
         color: var(--base);
+        text-decoration: none;
         .logo{
             display: flex;
             align-items: center;
@@ -59,10 +60,13 @@ Header{
         }
         .logo-text{
           flex: 1;
+          color: #f7f7f2;
+          
         }
     }
     nav{
         display: flex;
+        align-items: center;
         ul{
             display: flex;
             list-style-type: none;
@@ -71,15 +75,197 @@ Header{
                 a{
                     display: inline-block;
                     padding: 10px 20px;
-                    color: #122936;
+                    color: #dbe0e4;
+                    text-decoration: none;
+                    transition: fill 0.3s ease; 
                     &:hover{
-                        background: #122936;
-                        color: var(--base-200);
+                        color: #398ae0;
                         border-radius: 10px;
-                        text-decoration: none;
+                        text-decoration:none;
                     }
                 }
             }
         }
+
+        .mobile-toogle{
+            display:none;
+            padding: 20px;
+            color: #f7f7f2;
+            @media (max-width: 768px) {
+                display: inline-block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+        }
+    }
+
+    @media (max-width: 1024px) {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+        nav{
+            margin-top: 10px;
+            width: 100%;
+            ul{
+                display: none;
+                flex-direction: column;
+                text-align: center;
+                width: 100%;
+                a {
+                    width: 100%;
+                }
+                &.active{
+                    display:flex;
+                }
+            }
+        }
+    }
+}
+
+
+section {
+    max-width: 1440px;
+    margin: auto;
+    gap: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.button {
+    appearance: none;
+    background-color: #000000;
+    border: 2px solid #1A1A1A;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    min-height: 0px;
+    min-width: 0;
+    outline: none;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+
+    will-change: transform;
+  }
+  
+  .button:disabled {
+    pointer-events: none;
+  }
+  
+  .button:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+  
+  .button:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+
+.container{
+    max-width: 1440px;
+    margin: auto;
+    gap: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    @media (max-width: 1440px) {
+       padding-left: 30px ;
+       padding-right: 30px;
+    }
+}
+
+h1 {
+    font-size: 64px;
+    line-height: 1;
+    margin-bottom: 10px;
+    small{
+        display: block;
+        font-weight: 100;
+    }
+    @media (max-width: 1024px) {
+        font-size: 48px;
+    }
+}
+
+.hero-container{
+    
+    display: flex;
+    @media (max-width:1024px){
+        flex-direction: column;
+        margin-bottom: 0%;
+    }
+    .hero-text {
+    
+        background-color: var(--base);
+        color: #f7f7f2;
+        border-radius: 5px;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 40px;
+        .social-btn svg {
+            width: 48px; 
+            height: 48px;
+            fill: #5c5c5c;
+            transition: fill 0.3s ease; 
+            padding: 1px;
+        }
+        .social-btn:hover svg {
+            fill: #398ae0; 
+            text-decoration: none;
+        }
+    }
+
+
+}
+.logos{
+    background-color: #dbe0e4;
+    border-radius: 30px;
+    padding: 30px 0px;
+    @media (max-width:1440px){
+        border-radius: 0px;
+    }
+    .marquee {
+        width: 100vw;
+        max-width: 100%;
+        height: 128px;
+        overflow: hidden;
+        position: relative;
+        .track{
+            position: absolute;
+            white-space: nowrap;
+            will-change: transform;
+            animation: marquee 40s linear infinite;
+            display: flex;
+            gap: 10px;
+        }
+    }
+}
+
+#keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
     }
 }
