@@ -238,7 +238,7 @@ h1 {
 
 }
 .logos{
-    background-color: #dbe0e4;
+    background-color: var(--base);
     border-radius: 30px;
     padding: 30px 0px;
     @media (max-width:1440px){
@@ -261,11 +261,173 @@ h1 {
     }
 }
 
-#keyframes marquee {
+@keyframes marquee {
     0% {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-20%);
+    }
+}
+
+h2{
+    font-size: 64px;
+    line-height: 1;
+    margin-bottom: 10px;
+    text-align: center;
+    color: var(--base-200);
+    padding: 30px;
+    small{
+        display: block;
+        font-weight: 100;
+        font-size: 0.5em;
+        color: var(--base-200);
+    }
+    @media (min-width: 1024px){
+        font-size: 48px;
+    }
+}
+
+h3{
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 20px;
+
+}
+
+.skills {
+    .skills-container{
+        background-color: #201f1f;
+        border-radius: 30px;
+        padding: 30px;
+        display: flex;
+        color: #f7f7f2;
+        @media(min-width: 1024px) {
+            flex-direction: coloumn;
+        }
+        .left-column{
+          flex: 1;
+          ul{
+            list-style: none;
+            gap: 10px;
+            margin-right: 100px;
+            margin-bottom: 20px;
+            li{
+                display: inline-block;
+                padding: 10px 20px;
+                border-radius: 15px;
+                margin-bottom: 10px;
+                background-color: blueviolet;
+            }
+          }
+        }
+        .right-column{
+           flex: 1;
+           ul{
+            list-style: none;
+            gap: 10px;
+            margin-right: 100px;
+            margin-bottom: 20px;
+            li{
+                display: inline-block;
+                padding: 10px 20px;
+                border-radius: 15px;
+                margin-bottom: 10px;
+                background-color: rgb(84, 17, 148);
+            }
+          }
+        }
+    }
+}
+
+.bento{
+
+    .bento-grid{
+        display: grid;
+        grid-gap: 30px;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        @media(max-width: 1024px){
+            grid-template-rows:  repeat(8, 1fr);
+
+        }
+        @media(max-width: 768px){
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            height: auto;
+        }
+        .bento-item{
+            padding: 30px;
+            background-color: rgb(46, 38, 54);
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            img{
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                object-fit: cover;
+                transition: ease 3s all;
+            }
+            &:hover {
+                img {
+                    transform: scale(1.2);
+                }
+            }
+
+            @media(max-width: 768px){
+                height: 240px;
+            }
+            &:nth-child(1){
+                grid-column: span 2;
+                grid-row: span 2;
+                @media(max-width: 1024px){
+                    grid-column: span 2;
+                    grid-row: span 1;
+                    
+                }
+            }
+            &:nth-child(2){
+                grid-column: span 2;
+                grid-row: span 11;
+                @media(max-width: 1024px){
+                    grid-column: span 3;
+                    grid-row: span 2;
+                    
+                }
+            }
+            &:nth-child(3){
+                grid-column: span 1;
+                grid-row: span 11;
+                @media(max-width: 1024px){
+                    grid-column: span 3;
+                    grid-row: span 2;
+                    
+                }
+            }
+            &:nth-child(4){
+                grid-column: span 2;
+                grid-row: span 9;
+                @media(max-width: 1024px){
+                    grid-column: span 2;
+                    grid-row: span 4;
+                    
+                }
+            }
+            &:nth-child(5){
+                grid-column: span 5;
+                grid-row: span 7;
+                @media(max-width: 1024px){
+                    grid-column: span 3;
+                    grid-row: span 2;
+                    
+                }
+            }
+
+
+        }
     }
 }
