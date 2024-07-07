@@ -160,11 +160,12 @@ section {
     font-weight: 600;
     line-height: normal;
     margin: 0;
-    min-height: 0px;
+    min-height: 10px;
     min-width: 0;
     outline: none;
     padding: 10px 30px;
     text-align: center;
+    height: 100%;
     text-decoration: none;
     transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
     user-select: none;
@@ -479,6 +480,13 @@ h3{
     margin-bottom: 30px;
     overflow: hidden;
     height: 100%;
+    display: flex;          /* Use flexbox for layout */
+    flex-direction: column;
+}
+.Contact-class form {
+    display: grid;        
+    grid-template-rows: repeat(1, 4fr); /* 4 equal height rows for inputs and button */
+    grid-template-columns: 1fr;   /* Single column layout */
 }
 
 .form-input {
@@ -498,7 +506,7 @@ h3{
 }
 
 textarea.form-input {
-    min-height: 100px;
+    min-height: 168px;
     height: 120px;
     max-height: 200px;
     resize: vertical;
@@ -515,9 +523,7 @@ textarea.form-input::-webkit-resizer {display: none;}
       box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
       color: green;
       cursor: pointer;
-      display: flex;
-      font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
-      padding: 24px 45px;
+      padding: 8px 8px;
       text-align: center;
       text-decoration: none;
       transition: all 250ms;
@@ -526,12 +532,12 @@ textarea.form-input::-webkit-resizer {display: none;}
       user-select: none;
       -webkit-user-select: none;
       touch-action: manipulation;
-      justify-content: center;
-      margin-left: 30px;
-      text-transform: capitalize;
+      align-self: flex-end;   /* Align the button to the right */
+      margin-right: 20px;
+      grid-row: 4;
 
-    
-
+      
+       
 }
 .frm-btn:hover {
     box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
@@ -540,6 +546,13 @@ textarea.form-input::-webkit-resizer {display: none;}
 
 .contact-less {
     display: flex;
-    flex-direction: row
+    flex-direction: row;
     gap: 30px;
+    @media(max-width: 768px){
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        height: 100%;
+        z-index: 1;
+    }
 }
