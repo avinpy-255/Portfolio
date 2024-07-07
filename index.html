@@ -19,16 +19,16 @@
         <nav >
             <ul id="menu" >
                 <li>
-                   <a href="#">Home</a>
+                   <a href="#home">Home</a>
                 </li>
                 <li>
-                   <a href="#">Skills</a>
+                   <a href="#skills">Skills</a>
                 </li>
                 <li>
-                  <a href="#">Projects</a>
+                  <a href="#projects">Projects</a>
                 </li>
                 <li>
-                   <a href="#">Contacts</a>
+                   <a href="#contacts">Contacts</a>
                 </li>
             </ul>
             <a href="#" class="mobile-toogle" onClick="toggleMobileMenu();">
@@ -39,7 +39,7 @@
         </nav>
     </header>
     <main>
-        <section class="hero-container">
+        <section class="hero-container" id="home">
             <div class="hero-text">
                 <h1>Hello, I'm Avinash Chowdhury.</h1>
                 <p>I'm a Fullstack Developer with a passion for creating beautiful and user-friendly Projects.</p>
@@ -65,7 +65,6 @@
                           </svg>
                     </a>
                 </div>
-                  
             </div>
         
 
@@ -88,7 +87,7 @@
                 </div>
             </div>
         </section>
-        <section class="skills">
+        <section class="skills" id="skills">
            <h2>
             <small>About Me</small>
             Skills
@@ -117,7 +116,7 @@
                 </div>
             </div>
         </section>
-        <section class="bento">
+        <section class="bento" id="projects">
             <h2>
                 <small>
                     My Previous
@@ -142,18 +141,24 @@
                 </div>
             </div>
         </section>
-        <section class="chatbot">
+        <section class="Contacts" id="contacts">
             <h2>
                 <small>
                     Talk to Me
                 </small>
+                Contacts
             </h2>
             <div>
-                <div>
-                 
-                </div>
-                <div>
-
+               <div class="mapbox">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3686.5130632843366!2d88.31999867936146!3d22.48492565491131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027a76bf016b2b%3A0xc4ff64bde55ae693!2s47%2F5b%2C%20Kalipada%20Mukherjee%20Rd%2C%20near%20Barisha%2C%20Barisha%2C%20Kolkata%2C%20West%20Bengal%20700008!5e0!3m2!1sen!2sin!4v1720350396648!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+               </div>
+                <div class="Contact-class">
+                  <form>
+                    <input type="text" placeholder="Name" class="form-input" required/> <br/>
+                    <input type="email" placeholder="Email" class="form-input" required/> <br/>
+                    <textarea type= "Message" placeholder="Message" class="form-input" required></textarea>
+                    <button type="submit" class="frm-btn">SEND</button>
+                  </form>
                 </div>
             </div>
         </section>
