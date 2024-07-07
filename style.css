@@ -56,12 +56,21 @@ Header{
             width: 64px;
             margin-right: 20px;
             border-radius: 50%;
+            @media (max-width: 768px) {
+                display: none;
+            }
              
         }
         .logo-text{
           flex: 1;
           color: #f7f7f2;
-          
+          @media (max-width: 768px) {
+            font-size: 26px;
+            flex: 1;
+            margin-top: 20px;
+  
+        }
+
         }
     }
     nav{
@@ -111,6 +120,7 @@ Header{
         nav{
             margin-top: 10px;
             width: 100%;
+            
             ul{
                 display: none;
                 flex-direction: column;
