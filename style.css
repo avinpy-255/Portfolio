@@ -554,6 +554,13 @@ textarea.form-input::-webkit-resizer {display: none;}
         height: 100%;
         z-index: 1;
     }
+    @media(max-width: 1440px){
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        height: 100%;
+        z-index: 1;
+    }
 }
 
 .snd-button{
